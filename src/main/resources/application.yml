@@ -1,0 +1,31 @@
+spring:
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    com.lucy: debug
+
+jwt:
+  header: Authoization
+  secret: bHVjeS1qd3Qtc3R1ZHlsdWN5LWp3dC1zdHVkeWx1Y3ktand0LXN0dWR5bHVjeS1qd3Qtc3R1ZHlsdWN5LWp3dC1zdHVkeQ==
+  token-validity-in-seconds: 86400
+
