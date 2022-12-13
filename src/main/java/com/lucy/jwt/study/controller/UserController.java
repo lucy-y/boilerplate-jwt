@@ -31,6 +31,13 @@ public class UserController extends BaseController{
         return ResponseEntity.ok(userService.signup(userDto));
     }
 
+    @PostMapping("/leave")
+    public ResponseEntity<Boolean> leave(
+            @Valid @RequestBody UserDto userDto
+    ) {
+        return ResponseEntity.ok(userService.leave(userDto));
+    }
+
     @GetMapping("/user")
     @PreAuthorize("hasAnyRole('USER','ADMIN')")
     public ResponseEntity<UserDto> getMyUserInfo(HttpServletRequest request) {
